@@ -46,8 +46,8 @@ async def main_pratheek():
                     except FloodWait as e:
                         await asyncio.sleep(e.x)            
                 time = datetime.datetime.now(pytz.timezone(f"{TIME_ZONE}"))
-                last_update = time.strftime(f"%d-%m-%Y %l:%M:%S %p")
-                xxx_pratheek += f"\n\n✔️ Kiểm tra lần cuối lúc:\n {last_update}"
+                last_update = time.strftime(f"%d-%m-%Y %l:%M %p")
+                xxx_pratheek += f"\n\n✔️ Kiểm tra lúc: {last_update}"
                 await app.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, xxx_pratheek)
                 print(f"Kiểm tra lần cuối lúc: {last_update}")                
                 await asyncio.sleep(2700)
