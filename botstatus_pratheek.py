@@ -36,18 +36,18 @@ async def main_pratheek():
                             xxx_pratheek += f"\n\n🤖 **BOT**: @{bot}\n🔴 **STATUS**: down ❌"
                             for bot_admin_id in BOT_ADMIN_IDS:
                                 try:
-                                    await app.send_message(int(bot_admin_id), f"🚨 **Beep! Beep!! @{bot} is down** ❌")
+                                    await app.send_message(int(bot_admin_id), f"🚨 **Beep! Beep!! @{bot} đã chết** ❌")
                                 except Exception:
                                     pass
                             await app.read_history(bot)
                         else:
-                            xxx_pratheek += f"\n\n🤖 **BOT**: @{bot}\n🟢 **STATUS**: alive ✅"
+                            xxx_pratheek += f"\n\n🤖 **BOT**: @{bot}\n🟢 **STATUS**: Đang hoạt động ✅"
                             await app.read_history(bot)
                     except FloodWait as e:
                         await asyncio.sleep(e.x)            
                 time = datetime.datetime.now(pytz.timezone(f"{TIME_ZONE}"))
                 last_update = time.strftime(f"%d %b %Y at %I:%M %p")
-                xxx_pratheek += f"\n\n✔️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Updates every 45min</i> - Made By [Dᴇᴠᴏʟᴏᴘᴇʀ🥀](https://t.me/pratheek06) 💙"
+                xxx_pratheek += f"\n\n✔️ Kiểm tra lần cuối: {last_update} ({TIME_ZONE})\n\n<i>♻️ Cập nhật cứ sau 45 phút</i>💙"
                 await app.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, xxx_pratheek)
                 print(f"Last checked on: {last_update}")                
                 await asyncio.sleep(2700)
