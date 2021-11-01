@@ -49,7 +49,7 @@ async def main_pratheek():
                 last_update = time.strftime(f"%d %b %Y at %I:%M %p")
                 xxx_pratheek += f"\n\n✔️ Kiểm tra lần cuối: {last_update} ({TIME_ZONE})\n\n<i>♻️ Cập nhật cứ sau 45 phút</i>💙"
                 await app.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, xxx_pratheek)
-                print(f"Last checked on: {last_update}")                
+                print(f"Kiểm tra lần cuối: {last_update}")                
                 await asyncio.sleep(2700)
                         
 app.run(main_pratheek())
