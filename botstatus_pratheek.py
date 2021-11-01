@@ -33,7 +33,7 @@ async def main_pratheek():
                         for ccc in zzz_pratheek:
                             bbb = ccc.message_id
                         if aaa == bbb:
-                            xxx_pratheek += f"\n\n🤖 **BOT**: @{bot}\n🔴 **STATUS**: down ❌"
+                            xxx_pratheek += f"\n\n🤖 **BOT**: @{bot}\n🔴 **Trạng thái**: Ngừng hoạt động ❌"
                             for bot_admin_id in BOT_ADMIN_IDS:
                                 try:
                                     await app.send_message(int(bot_admin_id), f"🚨 **Beep! Beep!! @{bot} đã chết** ❌")
@@ -41,15 +41,15 @@ async def main_pratheek():
                                     pass
                             await app.read_history(bot)
                         else:
-                            xxx_pratheek += f"\n\n🤖 **BOT**: @{bot}\n🟢 **STATUS**: Đang hoạt động ✅"
+                            xxx_pratheek += f"\n\n🤖 **BOT**: @{bot}\n🟢 **Trạng thái**: Đang hoạt động ✅"
                             await app.read_history(bot)
                     except FloodWait as e:
                         await asyncio.sleep(e.x)            
                 time = datetime.datetime.now(pytz.timezone(f"{TIME_ZONE}"))
-                last_update = time.strftime(f"%d %b %Y at %I:%M %p")
-                xxx_pratheek += f"\n\n✔️ Kiểm tra lần cuối: {last_update} ({TIME_ZONE})\n\n<i>♻️ Cập nhật cứ sau 45 phút</i>💙"
+                last_update = time.strftime(f"%d-%m-%Y %l:%M:%S %p")
+                xxx_pratheek += f"\n\n✔️ Kiểm tra lần cuối lúc: {last_update}"
                 await app.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, xxx_pratheek)
-                print(f"Kiểm tra lần cuối: {last_update}")                
+                print(f"Kiểm tra lần cuối lúc: {last_update}")                
                 await asyncio.sleep(2700)
                         
 app.run(main_pratheek())
